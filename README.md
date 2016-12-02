@@ -1,5 +1,9 @@
-PyInstaller Alpine
+PyInstaller Alpine (Python 3.5)
 ==================
+
+[![Docker Automated build](https://img.shields.io/docker/automated/nerdwaller/pyinstaller-alpine.svg)](https://hub.docker.com/r/nerdwaller/pyinstaller-alpine/)
+[![Docker Layers](https://images.microbadger.com/badges/image/nerdwaller/pyinstaller-alpine.svg)](https://hub.docker.com/r/nerdwaller/pyinstaller-alpine/)
+
 
 Docker image that can build single file Python apps with 
 [PyInstaller](http://pyinstaller.readthedocs.io/) for 
@@ -29,8 +33,8 @@ mounted as a volume at `/src`:
         --log-level DEBUG \
         --clean \
         example.py
-        
-If a `requirements.txt` file is found in your source directory, the 
+
+If either a `requirements.txt` or `setup.py` file is found in your source directory, the 
 requirements will automatically be installed with `pip`.        
 
 This will output a built app to the `dist` sub-directory in your source
@@ -78,4 +82,5 @@ Building Docker Image
 
 If you'd like to build the Docker image yourself:
 
-    docker build -t six8/pyinstaller-alpine .
+    $ docker build -t six8/pyinstaller-alpine .  # 2.7
+    $ docker build -t nerdwaller/pyinstaller-alpine .  # 3.5
